@@ -15,4 +15,8 @@ require('./components/change-sky.js');
 require('./components/change-mountains.js');
 require('./components/change-fog.js');
 require('./components/phase-shift.js');
+require('./common/ui.js');
+require('./common/ui-listener.js');
+
+
 
