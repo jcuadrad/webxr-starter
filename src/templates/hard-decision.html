@@ -1,0 +1,23 @@
+<a-entity class="hard-decision" rotation="0 90 0">
+    <!-- Description -->
+    <a-entity text="value: You might be interested in going somewhere.\n Are you down?;
+        color: #AAAAAA; align: center; width: 18;
+        lineHeight: 64; wrapCount: 56; letterSpacing: 2;
+        z-offset: 0.01" geometry="primitive: plane; width: 22; height: 4" material="color: #212121; shader: flat;"
+        position="0 6 -12">
+    </a-entity>
+    <!-- Button -->
+    <a-entity text="value: Deep dive;
+        color: #AAAAAA; align: center; width: 18;
+        lineHeight: 64; wrapCount: 56; letterSpacing: 2;
+        z-offset: 0.01" geometry="primitive: plane; width: 4; height: 2" material="color: aquamarine; shader: flat;"
+        position="-3 2 -12">
+    </a-entity>
+    <!-- Button -->
+    <a-entity text="value: Continue;
+        color: #AAAAAA; align: center; width: 18;
+        lineHeight: 64; wrapCount: 56; letterSpacing: 2;
+        z-offset: 0.01" geometry="primitive: plane; width: 4; height: 2" material="color: aquamarine; shader: flat;"
+        position="3 2 -12" ui-listener="type: decision-button;" id="scene2" class="selectable">
+    </a-entity>
+</a-entity>

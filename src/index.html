@@ -1,46 +1,78 @@
 <html>
-  <head>
-    <title>WebVR Boilerplate</title>
-    <link rel="stylesheet" type="text/css" href="../styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenMax.min.js"></script>
-  </head>
-  <body>
-     <!-- Intro Screen -->
-     <div id="intro-screen">
-      <h1>Welcome to HumanaVR</h1>
-      <h3>Would you like to enter the experience?</h3>
-      <button id="enter-button">
-        Enter
-      </button>
-    </div>
-    
-    <!-- A-Frame scene -->
-    <a-scene background="color: #FAFAFA">
-      <a-camera>
-          <a-entity cursor="fuse: false; fuseTimeout: 500"
-                    position="0 0 -1"
-                    geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.02"
-                    material="color: white; shader: flat"
-                    raycaster="objects: .selectable">
-          </a-entity>  
-      </a-camera>
-      
-      <!-- Video Entity -->
-      <a-videosphere rotation="0 0 0" src="#scene1"></a-videosphere>
-      
-      <a-image class="selectable" src="https://cdn.glitch.com/a7b39959-1c6e-4211-b7e1-cf264620189f%2Ftarget.png?1556164654873"
-               position="0 0 -5" ui-listener></a-image>
-      
-      <!-- Wait for the video to load. -->
-      <a-assets>
-        <!-- Single source video. -->
-        <video id="scene1" style="display:none" preload="auto"
-               crossorigin="anonymous" playsinline webkit-playsinline>
-          <!-- MP4 video source. -->
-          <source type="video/mp4"
-               src="https://cdn.glitch.com/a7b39959-1c6e-4211-b7e1-cf264620189f%2FStory1HD.mp4?1556149381787" />
-        </video>
-      </a-assets>
-    </a-scene>
-   </body>
+
+<head>
+  <title>WebVR Boilerplate</title>
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenMax.min.js"></script>
+</head>
+
+<body>
+  <!-- Intro Screen -->
+  <div id="intro-screen">
+    <h1>Welcome to HumanaVR</h1>
+    <h3>Would you like to enter the experience?</h3>
+    <button id="enter-button">
+      Enter
+    </button>
+  </div>
+
+  <!-- A-Frame scene -->
+  <a-scene background="color: #FAFAFA" vr-mode-ui="enabled: false" game-state="state: intro;">
+    <a-camera>
+      <a-entity cursor="fuse: false; fuseTimeout: 500; rayOrigin: mouse;" position="0 0 -1"
+        geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.02" material="color: white; shader: flat"
+        raycaster="objects: .selectable">
+      </a-entity>
+    </a-camera>
+
+    <!-- Video Entity -->
+    <a-videosphere rotation="0 0 0" src="#scene1" video-controls></a-videosphere>
+
+    <a-image class="selectable"
+      src="https://cdn.glitch.com/a7b39959-1c6e-4211-b7e1-cf264620189f%2Ftarget.png?1556164654873" position="0 0 -5"
+      ui-listener></a-image>
+
+    <!-- <a-plane material="color: black; opacity: 0.5;" position="-2 2 0" rotation="0 90 0" scale="2.6 1.73 1">
+      <a-text value="Hello"></a-text>
+    </a-plane> -->
+
+    <!-- <a-entity class="hard-decision" rotation="0 90 0">
+      <!-- Description 
+      <a-entity text="value: You might be interested in going somewhere.\n Are you down?;
+      color: #AAAAAA; align: center; width: 18;
+      lineHeight: 64; wrapCount: 56; letterSpacing: 2;
+      z-offset: 0.01" geometry="primitive: plane; width: 22; height: 4" material="color: #212121; shader: flat;"
+        position="0 6 -12">
+      </a-entity>
+      <!-- Button
+      <a-entity text="value: Deep dive;
+      color: #AAAAAA; align: center; width: 18;
+      lineHeight: 64; wrapCount: 56; letterSpacing: 2;
+      z-offset: 0.01" geometry="primitive: plane; width: 4; height: 2" material="color: aquamarine; shader: flat;" position="-3 2 -12">
+      </a-entity>
+      <!-- Button
+      <a-entity text="value: Continue;
+      color: #AAAAAA; align: center; width: 18;
+      lineHeight: 64; wrapCount: 56; letterSpacing: 2;
+      z-offset: 0.01" geometry="primitive: plane; width: 4; height: 2" material="color: aquamarine; shader: flat;" position="3 2 -12">
+      </a-entity>
+    </a-entity> -->
+
+    <!-- Wait for the video to load. -->
+    <a-assets>
+      <!-- Single source video. -->
+      <video id="scene1" style="display:none" preload="auto" crossorigin="anonymous" playsinline webkit-playsinline>
+        <!-- MP4 video source. -->
+        <source type="video/mp4"
+          src="https://cdn.glitch.com/a7b39959-1c6e-4211-b7e1-cf264620189f%2FStory1HD.mp4?1556149381787" />
+      </video>
+      <video id="scene2" style="display:none" preload="auto" crossorigin="anonymous" playsinline webkit-playsinline>
+        <!-- MP4 video source. -->
+        <source type="video/mp4"
+          src="https://cdn.glitch.com/a7b39959-1c6e-4211-b7e1-cf264620189f%2F360_VR%20Master%20Series%20_%20Free%20Download%20_%20London%20On%20Tower%20Bridge.mp4?1556602084314" />
+      </video>
+    </a-assets>
+  </a-scene>
+</body>
+
 </html>

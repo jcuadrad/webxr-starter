@@ -7,6 +7,7 @@ require('super-hands');
 require('aframe-teleport-controls');
 require('aframe-ui-widgets');
 require('aframe-event-set-component');
+// require('aframe-gui');
 
 
 
@@ -17,6 +18,10 @@ require('./components/change-fog.js');
 require('./components/phase-shift.js');
 require('./common/ui.js');
 require('./common/ui-listener.js');
+require('./components/video-controls.js');
+require('./components/states/scene2');
+require('./systems/video-system.js');
+require('./systems/experience-manager.js');
 
 
 
